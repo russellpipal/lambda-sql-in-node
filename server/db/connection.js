@@ -16,9 +16,12 @@ function initializeDB(){
       process.exit(1);
     } else {
       var query = client.query('CREATE TABLE IF NOT EXISTS people (' +
-      'id SERIAL PRIMARY KEY,' +
-      'name varchar(80) NOT NULL,' +
-      'address text);');
+      'id SERIAL PRIMARY KEY, ' +
+      'name character varying(255) NOT NULL, ' +
+      'address character varying(255) NOT NULL, ' +
+      'city varchar(100) NOT NULL, ' +
+      'state varchar(3) NOT NULL, ' +
+      'zip varchar(5) NOT NULL)');
 
       query.on('end', function(){
         console.log('Successfully ensured schema exists');
