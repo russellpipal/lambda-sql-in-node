@@ -21,10 +21,14 @@
       <input type="text" ng-model="person.state" />
 
       <label>Zip Code:</label>
-      <input type="number" maxlength="5" ng-model="person.zip" />
+      <input type="text" maxlength="5" ng-model="person.zip" />
       <button ng-click="person.sendData()">Submit</button><br />
-      <div ng-repeat='result in results'>
-        {{ result }}
+      <div ng-repeat='result in person.results'>
+        <p>Name: {{ result.name }}</p>
+        <p>Address: {{ result.address }}</p>
+        <p>City: {{ result.city }}</p>
+        <p>State: {{ result.state }}</p>
+        <p>Zip Code: {{ result.zip }}</p>
       </div>
     </div>
   </body>
